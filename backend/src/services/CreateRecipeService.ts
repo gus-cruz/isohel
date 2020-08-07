@@ -5,7 +5,6 @@ import RecipesRepository from '../repositories/RecipesRepository';
 
 interface Request {
     title: string;
-    picture: string;
     description: string;
     ingredients: string;
     steps: string;
@@ -14,7 +13,6 @@ interface Request {
 class CreateRecipeService {
     public async execute({ 
         title, 
-        picture, 
         description, 
         ingredients, 
         steps 
@@ -23,7 +21,6 @@ class CreateRecipeService {
         
         const recipe = recipesRepository.create({
             title,
-            picture,
             description,
             ingredients,
             steps
