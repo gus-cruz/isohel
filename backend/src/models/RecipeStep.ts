@@ -10,7 +10,7 @@ import {
 
 import Recipe from './Recipe';
 
-@Entity('steps')
+@Entity('recipe_steps')
 class Step {
     @PrimaryGeneratedColumn('uuid')
     id: string;
