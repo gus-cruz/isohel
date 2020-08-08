@@ -3,22 +3,30 @@ import {
     Column, 
     PrimaryGeneratedColumn, 
     CreateDateColumn,  
-    UpdateDateColumn 
+    UpdateDateColumn,
+    ManyToOne,
+    JoinColumn
 } from 'typeorm';
 
-@Entity('recipes')
-class Recipe {
+import Recipe from './Recipe';
+
+@Entity('steps')
+class Step {
     @PrimaryGeneratedColumn('uuid')
     id: string;
     
     @Column()
-    title: string;
+    recipe_id: string;
+
+    @ManyToOne(() => Recipe)
+    @JoinColumn({ name: 'recipe_id' })
+    recipe: Recipe;
 
     @Column()
-    picture: string;
+    step: string;
 
     @Column()
-    description: string;
+    number: number;
 
     @CreateDateColumn()
     created_at: Date;
@@ -27,4 +35,4 @@ class Recipe {
     updated_at: Date;
 }
 
-export default Recipe;
+export default Step;
