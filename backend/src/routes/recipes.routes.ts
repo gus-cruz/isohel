@@ -6,7 +6,6 @@ import RecipesRepository from '../repositories/RecipesRepository';
 import CreateRecipeService from '../services/CreateRecipeService';
 import SendRecipePictureService from '../services/SendRecipePictureService'
 
-
 const recipesRouter = Router();
 const upload = multer(uploadConfig);
 
@@ -20,7 +19,7 @@ recipesRouter.get('/', (request, response) => {
 recipesRouter.post('/',
     async (request, response) => {
         try {
-            const { title, description, picture, ingredients, steps } = request.body;
+            const { title, description, picture, ingredients, steps, user_id } = request.body;
 
             const createRecipe = new CreateRecipeService();
 
@@ -28,7 +27,8 @@ recipesRouter.post('/',
                 title,
                 description,
                 ingredients,
-                steps
+                steps,
+                user_id
             });
 
             return response.json(recipe);
@@ -43,7 +43,7 @@ recipesRouter.patch(
     upload.single('picture'),
     async (request, response) => {
         const { recipe_id } = request.params;
-        const pictureFilename = request.file.filename
+        const pictureFilename = request.file.filename;
 
         const sendRecipe = new SendRecipePictureService();
 

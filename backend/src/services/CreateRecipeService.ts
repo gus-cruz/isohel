@@ -11,6 +11,7 @@ interface Request {
     description: string;
     ingredients: string[];
     steps: string[];
+    user_id: string;
 }
 
 interface FullRecipe {
@@ -24,7 +25,8 @@ class CreateRecipeService {
         title, 
         description, 
         ingredients, 
-        steps 
+        steps,
+        user_id
     }: Request): Promise<FullRecipe> {
         const recipesRepository = getCustomRepository(RecipesRepository);
         const ingredientRepository = getCustomRepository(RecipesIngredientRepository);
@@ -33,6 +35,7 @@ class CreateRecipeService {
         const recipe = recipesRepository.create({
             title,
             description,
+            user_id
         });
 
         await recipesRepository.save(recipe);
