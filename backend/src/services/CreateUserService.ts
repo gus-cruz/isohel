@@ -1,4 +1,5 @@
 import { getCustomRepository } from 'typeorm';
+import { hash } from 'bcryptjs';
 
 import User from '../models/User';
 
@@ -22,17 +23,19 @@ class CreateUserService {
     }: Request): Promise<User> {
         const usersRepository = getCustomRepository(UsersRepository);
 
+        const hashedPassword = await hash(password, 8);
+
         const users = usersRepository.create({
             name, 
             last_name, 
             email,
             user,
-            password
+            password: hashedPassword,
         });
 
         await usersRepository.save(users);
 
-        return {name, last_name, email, user, password} as User;
+        return {name, last_name, email, user} as User;
     }
 } 
 
