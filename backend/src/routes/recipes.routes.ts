@@ -4,7 +4,9 @@ import uploadConfig from '../config/upload';
 import { getCustomRepository } from 'typeorm';
 import RecipesRepository from '../repositories/RecipesRepository';
 import CreateRecipeService from '../services/CreateRecipeService';
-import SendRecipePictureService from '../services/SendRecipePictureService'
+import SendRecipePictureService from '../services/SendRecipePictureService';
+import AlterRecipeData from '../services/AlterRecipeData';
+
 
 const recipesRouter = Router();
 const upload = multer(uploadConfig);
@@ -16,7 +18,8 @@ recipesRouter.get('/', (request, response) => {
     return response.json(recipes);
 });
 
-recipesRouter.post('/',
+recipesRouter.post(
+    '/',
     async (request, response) => {
         try {
             const { title, description, picture, ingredients, steps, user_id } = request.body;
@@ -51,5 +54,18 @@ recipesRouter.patch(
 
         return response.json({ ok: true });
     });
+
+recipesRouter.put(
+    '/',
+    async (request, response) => {
+        const { recipe_id, title, description } = request.body;
+
+        const updateRecipe = new AlterRecipeData();
+
+        await updateRecipe.execute( { recipe_id, title, description });
+
+        return response.json({ ok: true });
+    }
+)
 
 export default recipesRouter;
