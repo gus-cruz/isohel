@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter } from 'react-router-dom';
+
+import Routes from './routes';
 
 import GlobalStyle from './styles/global';
-import Dashboard from './pages/Dashboard';
 
-function App() {
-  return (
-    <Dashboard />
-  );
-}
+const App: React.FC = () => (
+  <>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+    <GlobalStyle />
+  </>
+);
 
 export default App;
