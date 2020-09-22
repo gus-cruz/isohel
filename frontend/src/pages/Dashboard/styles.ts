@@ -97,6 +97,17 @@ export const Form = styled.form`
     }
 `
 
+export const Highlight = styled.div`
+    margin-top: 40px;
+
+    h1 {
+            font-size: 45px;
+            color: #333333;
+            max-width: 600px; 
+            line-height: 56px;
+    }
+`
+
 export const Recipes = styled.div`
     margin-top: 80px;
     
@@ -117,17 +128,19 @@ export const Recipes = styled.div`
         & + a {
              margin-top: 16px;
         }
+
+        svg {
+            &:last-child {
+                margin-left: auto;
+                color: #a3a3a3;
+            }
+        }
     }
 
     img {
         width: 74px;
         height: 74px;
         border-radius: 50%;
-    }
-
-    svg {
-        margin-left: auto;
-        color: #a3a3a3;
     }
 
     div {
@@ -140,6 +153,16 @@ export const Recipes = styled.div`
 
             & + div {
                 margin-top: 6px;
+                color: #757575;
+                align-items: center;
+
+                svg {
+                    color: #757575;
+                }
+
+                svg + p{
+                    margin-right: 8px;
+                }
             }
 
             strong {
@@ -152,8 +175,17 @@ export const Recipes = styled.div`
                 margin-left: 8px;
             }
 
-            p + p {
-                margin-left: 8px;
+            svg + p {
+                margin-left: 6px;
+            }
+
+            &:last-child {
+                margin-top: 10px;
+
+                svg {
+                    margin-left: 0;
+                    color: #f0323f;
+                } 
             }
         } 
     }
