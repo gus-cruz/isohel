@@ -4,6 +4,7 @@ import { FaHeart, FaStopwatch } from 'react-icons/fa';
 import { GiHotMeal } from 'react-icons/gi'
 
 import logoImg from '../../assets/isohel-logo.svg';
+import logoKairos from '../../assets/kairos-logo.png';
 
 import { 
     Logo, 
@@ -15,7 +16,7 @@ import {
     Section,
     Form,
     Recipes,
-    Highlight
+    Footer
 } from './styles';
 
 const Dashboard: React.FC = () => {
@@ -39,140 +40,281 @@ const Dashboard: React.FC = () => {
                 </Highlight> */}
 
                 <Form>
-                <h1>Encontre a receita perfeita para você</h1>
-                <div>
-                    <input placeholder="Informe o nome da receita"></input>
-                    <button type="submit">Pesquisar</button>
-                </div>
+                    <h1>Encontre a receita perfeita para você</h1>
+                    <div>
+                        <input placeholder="Informe o nome da receita"></input>
+                        <button type="submit">Pesquisar</button>
+                    </div>
                 </Form>
 
                 <Recipes>
-                    <a href="teste">
-                        <img
-                            src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
-                            alt="Num sei"
-                        />
-                        <div>
+                    <div>
+                        <a href="teste">
+                            <img
+                                src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
+                                alt="Num sei"
+                            />
                             <div>
-                                <strong>Bolo boludo</strong>
-                                <p>@xaolin</p>
+                                <div>
+                                    <strong>Bolo boludo</strong>
+                                    <p>@xaolin</p>
+                                </div>
+                                <div>
+                                    <GiHotMeal size={20} />
+                                    <p>6 porções</p>
+                                    <FaStopwatch size={18} />
+                                    <p>40 min</p>
+                                </div>
+                                <div>
+                                    <FaHeart size={20} /> 
+                                    <p>800</p>
+                                </div>
                             </div>
-                            <div>
-                                <GiHotMeal size={20} />
-                                <p>6 porções</p>
-                                <FaStopwatch size={18} />
-                                <p>40 min</p>
-                            </div>
-                            <div>
-                                <FaHeart size={20} /> 
-                                <p>800</p>
-                            </div>
-                        </div>
 
-                        <FiChevronRight size={20} />
-                    </a>
+                            <FiChevronRight size={20} />
+                        </a>
 
-                    <a href="teste">
-                        <img
-                            src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
-                            alt="Num sei"
-                        />
-                        <div>
+                        <a href="teste">
+                            <img
+                                src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
+                                alt="Num sei"
+                            />
                             <div>
-                                <strong>Bolo boludo</strong>
-                                <p>@xaolin</p>
+                                <div>
+                                    <strong>Bolo boludo</strong>
+                                    <p>@xaolin</p>
+                                </div>
+                                <div>
+                                    <GiHotMeal size={20} />
+                                    <p>6 porções</p>
+                                    <FaStopwatch size={18} />
+                                    <p>40 min</p>
+                                </div>
+                                <div>
+                                    <FaHeart size={20} /> 
+                                    <p>800</p>
+                                </div>
                             </div>
-                            <div>
-                                <GiHotMeal size={20} />
-                                <p>6 porções</p>
-                                <FaStopwatch size={18} />
-                                <p>40 min</p>
-                            </div>
-                            <div>
-                                <FaHeart size={20} /> 
-                                <p>800</p>
-                            </div>
-                        </div>
 
-                        <FiChevronRight size={20} />
-                    </a>
+                            <FiChevronRight size={20} />
+                        </a>
+                    </div>
+                    
+                    <div>
+                        <a href="teste">
+                            <img
+                                src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
+                                alt="Num sei"
+                            />
+                            <div>
+                                <div>
+                                    <strong>Bolo boludo</strong>
+                                    <p>@xaolin</p>
+                                </div>
+                                <div>
+                                    <GiHotMeal size={20} />
+                                    <p>6 porções</p>
+                                    <FaStopwatch size={18} />
+                                    <p>40 min</p>
+                                </div>
+                                <div>
+                                    <FaHeart size={20} /> 
+                                    <p>800</p>
+                                </div>
+                            </div>
 
-                    <a href="teste">
-                        <img
-                            src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
-                            alt="Num sei"
-                        />
-                        <div>
-                            <div>
-                                <strong>Bolo boludo</strong>
-                                <p>@xaolin</p>
-                            </div>
-                            <div>
-                                <GiHotMeal size={20} />
-                                <p>6 porções</p>
-                                <FaStopwatch size={18} />
-                                <p>40 min</p>
-                            </div>
-                            <div>
-                                <FaHeart size={20} /> 
-                                <p>800</p>
-                            </div>
-                        </div>
+                            <FiChevronRight size={20} />
+                        </a>
 
-                        <FiChevronRight size={20} />
-                    </a>
+                        <a href="teste">
+                            <img
+                                src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
+                                alt="Num sei"
+                            />
+                            <div>
+                                <div>
+                                    <strong>Bolo boludo</strong>
+                                    <p>@xaolin</p>
+                                </div>
+                                <div>
+                                    <GiHotMeal size={20} />
+                                    <p>6 porções</p>
+                                    <FaStopwatch size={18} />
+                                    <p>40 min</p>
+                                </div>
+                                <div>
+                                    <FaHeart size={20} /> 
+                                    <p>800</p>
+                                </div>
+                            </div>
 
-                    <a href="teste">
-                        <img
-                            src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
-                            alt="Num sei"
-                        />
-                        <div>
-                            <div>
-                                <strong>Bolo boludo</strong>
-                                <p>@xaolin</p>
-                            </div>
-                            <div>
-                                <GiHotMeal size={20} />
-                                <p>6 porções</p>
-                                <FaStopwatch size={18} />
-                                <p>40 min</p>
-                            </div>
-                            <div>
-                                <FaHeart size={20} /> 
-                                <p>800</p>
-                            </div>
-                        </div>
+                            <FiChevronRight size={20} />
+                        </a>
+                    </div>
 
-                        <FiChevronRight size={20} />
-                    </a>
+                    <div>
+                        <a href="teste">
+                            <img
+                                src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
+                                alt="Num sei"
+                            />
+                            <div>
+                                <div>
+                                    <strong>Bolo boludo</strong>
+                                    <p>@xaolin</p>
+                                </div>
+                                <div>
+                                    <GiHotMeal size={20} />
+                                    <p>6 porções</p>
+                                    <FaStopwatch size={18} />
+                                    <p>40 min</p>
+                                </div>
+                                <div>
+                                    <FaHeart size={20} /> 
+                                    <p>800</p>
+                                </div>
+                            </div>
 
-                    <a href="teste">
-                        <img
-                            src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
-                            alt="Num sei"
-                        />
-                        <div>
-                            <div>
-                                <strong>Bolo boludo</strong>
-                                <p>@xaolin</p>
-                            </div>
-                            <div>
-                                <GiHotMeal size={20} />
-                                <p>6 porções</p>
-                                <FaStopwatch size={18} />
-                                <p>40 min</p>
-                            </div>
-                            <div>
-                                <FaHeart size={20} /> 
-                                <p>800</p>
-                            </div>
-                        </div>
+                            <FiChevronRight size={20} />
+                        </a>
 
-                        <FiChevronRight size={20} />
-                    </a>
+                        <a href="teste">
+                            <img
+                                src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
+                                alt="Num sei"
+                            />
+                            <div>
+                                <div>
+                                    <strong>Bolo boludo</strong>
+                                    <p>@xaolin</p>
+                                </div>
+                                <div>
+                                    <GiHotMeal size={20} />
+                                    <p>6 porções</p>
+                                    <FaStopwatch size={18} />
+                                    <p>40 min</p>
+                                </div>
+                                <div>
+                                    <FaHeart size={20} /> 
+                                    <p>800</p>
+                                </div>
+                            </div>
+
+                            <FiChevronRight size={20} />
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="teste">
+                            <img
+                                src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
+                                alt="Num sei"
+                            />
+                            <div>
+                                <div>
+                                    <strong>Bolo boludo</strong>
+                                    <p>@xaolin</p>
+                                </div>
+                                <div>
+                                    <GiHotMeal size={20} />
+                                    <p>6 porções</p>
+                                    <FaStopwatch size={18} />
+                                    <p>40 min</p>
+                                </div>
+                                <div>
+                                    <FaHeart size={20} /> 
+                                    <p>800</p>
+                                </div>
+                            </div>
+
+                            <FiChevronRight size={20} />
+                        </a>
+
+                        <a href="teste">
+                            <img
+                                src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
+                                alt="Num sei"
+                            />
+                            <div>
+                                <div>
+                                    <strong>Bolo boludo</strong>
+                                    <p>@xaolin</p>
+                                </div>
+                                <div>
+                                    <GiHotMeal size={20} />
+                                    <p>6 porções</p>
+                                    <FaStopwatch size={18} />
+                                    <p>40 min</p>
+                                </div>
+                                <div>
+                                    <FaHeart size={20} /> 
+                                    <p>800</p>
+                                </div>
+                            </div>
+
+                            <FiChevronRight size={20} />
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="teste">
+                            <img
+                                src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
+                                alt="Num sei"
+                            />
+                            <div>
+                                <div>
+                                    <strong>Bolo boludo</strong>
+                                    <p>@xaolin</p>
+                                </div>
+                                <div>
+                                    <GiHotMeal size={20} />
+                                    <p>6 porções</p>
+                                    <FaStopwatch size={18} />
+                                    <p>40 min</p>
+                                </div>
+                                <div>
+                                    <FaHeart size={20} /> 
+                                    <p>800</p>
+                                </div>
+                            </div>
+
+                            <FiChevronRight size={20} />
+                        </a>
+
+                        <a href="teste">
+                            <img
+                                src="https://img.itdg.com.br/tdg/images/recipes/000/139/574/300138/300138_original.jpg?mode=crop&width=360&height=200"
+                                alt="Num sei"
+                            />
+                            <div>
+                                <div>
+                                    <strong>Bolo boludo</strong>
+                                    <p>@xaolin</p>
+                                </div>
+                                <div>
+                                    <GiHotMeal size={20} />
+                                    <p>6 porções</p>
+                                    <FaStopwatch size={18} />
+                                    <p>40 min</p>
+                                </div>
+                                <div>
+                                    <FaHeart size={20} /> 
+                                    <p>800</p>
+                                </div>
+                            </div>
+
+                            <FiChevronRight size={20} />
+                        </a>
+                    </div>
                 </Recipes>
             </Section>
+
+            <Footer>
+                <a href="teste">
+                    <img src={logoKairos}/>
+                </ a>
+            </ Footer>
         </ Container>
     )
 }

@@ -57,7 +57,7 @@ export const Section = styled.section`
 
 export const Form = styled.form`
     margin-top: 80px;
-   
+
     h1 {
         font-size: 45px;
         color: #333333;
@@ -110,23 +110,27 @@ export const Highlight = styled.div`
 
 export const Recipes = styled.div`
     margin-top: 80px;
-    
+
+    & > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     a {
         background: #fdfdfd;
         border-radius: 5px;
-        width: 60%;
         padding: 24px;
         display: block;
         display: flex;
+        flex: 0 49%;
+        width: 100%;
         align-items: center;
         transition: transform 0.2s;
+        margin: 10px 0;
 
         &:hover {
             transform: translateX(10px);
-        }
-
-        & + a {
-             margin-top: 16px;
         }
 
         svg {
@@ -135,58 +139,74 @@ export const Recipes = styled.div`
                 color: #a3a3a3;
             }
         }
-    }
 
-    img {
+        img {
         width: 74px;
         height: 74px;
         border-radius: 50%;
-    }
-
-    div {
-        margin-left: 16px;
-        color: #3a3a3a;
+        }
 
         div {
-            display: flex;
-            align-items: center;
+            margin-left: 16px;
+            color: #3a3a3a;
 
-            & + div {
-                margin-top: 6px;
-                color: #757575;
+            div {
+                display: flex;
                 align-items: center;
 
-                svg {
+                & + div {
+                    margin-top: 6px;
                     color: #757575;
+                    align-items: center;
+
+                    svg {
+                        color: #757575;
+                    }
+
+                    svg + p{
+                        margin-right: 8px;
+                    }
                 }
 
-                svg + p{
-                    margin-right: 8px;
+                strong {
+                    font-size: 20px;
+                    color: #333333;
                 }
-            }
 
-            strong {
-                font-size: 20px;
-                color: #333333;
-            }
+                strong + p {
+                    color: #a3a3a3;
+                    margin-left: 8px;
+                }
 
-            strong + p {
-                color: #a3a3a3;
-                margin-left: 8px;
-            }
+                svg + p {
+                    margin-left: 6px;
+                }
 
-            svg + p {
-                margin-left: 6px;
-            }
+                &:last-child {
+                    margin-top: 10px;
 
-            &:last-child {
-                margin-top: 10px;
+                    svg {
+                        margin-left: 0;
+                        color: #f0323f;
+                    } 
+                }
+            } 
+        }
+    }
 
-                svg {
-                    margin-left: 0;
-                    color: #f0323f;
-                } 
-            }
-        } 
+`
+
+export const Footer = styled.footer`
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    
+    img {
+        width: 80px;
+        opacity: 0.3;
+    }
+
+    a {
+        margin-bottom: 30px;
     }
 `
