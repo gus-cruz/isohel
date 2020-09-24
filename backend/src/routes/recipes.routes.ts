@@ -7,6 +7,13 @@ import CreateRecipeService from '../services/CreateRecipeService';
 import SendRecipePictureService from '../services/SendRecipePictureService';
 import AlterRecipeData from '../services/AlterRecipeData';
 
+interface Ingredient {
+    ingredients: {
+        ingredient_id: string;
+        ingredient: string;
+    }[]
+}
+
 
 const recipesRouter = Router();
 const upload = multer(uploadConfig);
@@ -56,13 +63,13 @@ recipesRouter.patch(
     });
 
 recipesRouter.put(
-    '/',
+    '/update',
     async (request, response) => {
-        const { recipe_id, title, description } = request.body;
+        const { ingredients, recipe_id, title, description } = request.body;
 
         const updateRecipe = new AlterRecipeData();
 
-        await updateRecipe.execute( { recipe_id, title, description });
+        await updateRecipe.execute( { recipe_id, ingredients, title, description });
 
         return response.json({ ok: true });
     }
