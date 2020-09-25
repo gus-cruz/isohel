@@ -1,11 +1,14 @@
 import { Router } from 'express';
 import multer from 'multer';
 import uploadConfig from '../config/upload';
-import { getCustomRepository } from 'typeorm';
+import { getCustomRepository, getRepository } from 'typeorm';
 import RecipesRepository from '../repositories/RecipesRepository';
 import CreateRecipeService from '../services/CreateRecipeService';
 import SendRecipePictureService from '../services/SendRecipePictureService';
 import AlterRecipeData from '../services/AlterRecipeData';
+import RecipesIngredientRepository from '../repositories/RecipesIngredientRepository';
+import Recipe from '../models/Recipe';
+import UsersRepository from '../repositories/UsersRepository';
 
 interface Ingredient {
     ingredients: {
@@ -14,16 +17,40 @@ interface Ingredient {
     }[]
 }
 
+interface UserRecipe {
+    username: string;
+    recipe: Recipe;
+}
 
 const recipesRouter = Router();
 const upload = multer(uploadConfig);
 
-recipesRouter.get('/', (request, response) => {
-    const recipesRepository = getCustomRepository(RecipesRepository);
-    const recipes = recipesRepository.find();
+recipesRouter.get(
+    '/',
+    async (request, response) => {
+        const recipesRepository = getCustomRepository(RecipesRepository);
+        const userRepository = getCustomRepository(UsersRepository);
+        const recipes = await recipesRepository.find();
 
-    return response.json(recipes);
+        let results: UserRecipe[] = await Promise.all(recipes.map(async (recipe): Promise<UserRecipe> => {
+            const user = await userRepository.findOne(recipe.user_id);
+
+            if(!user){ return {} as UserRecipe }
+
+            return {username: user.user, recipe};
+        }));
+
+        return response.json(results);
+        
+        /* recipes.map(async recipe => {
+            const user = await userRepository.findOne(recipe.user_id);
+
+            if(!user){ return }
+
+            return {username: user.user, recipe};
+        }); */
 });
+
 
 recipesRouter.post(
     '/',

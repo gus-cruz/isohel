@@ -8,11 +8,13 @@ import CreateUserService from '../services/CreateUserService';
 const usersCreate = Router();
 const upload = multer(uploadConfig);
 
-usersCreate.get('/', (request, response) => {
-    const usersRepository = getCustomRepository(UsersRepository);
-    const users = usersRepository.find();
+usersCreate.get(
+    '/',
+    async (request, response) => {
+        const usersRepository = getCustomRepository(UsersRepository);
+        const users = await usersRepository.find();
 
-    return response.json(users);    
+        return response.json(users);    
 });
 
 usersCreate.post('/',
