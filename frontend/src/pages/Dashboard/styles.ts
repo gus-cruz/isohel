@@ -63,12 +63,57 @@ export const Form = styled.form`
         color: #333333;
         max-width: 600px; 
         line-height: 56px;
+        margin-bottom: 40px;
+    }
+
+    ul {
+        margin-left: 10px;
+        margin-top: 8px;
+        list-style: none;
+
+        li {
+            display: inline;
+            margin-right: 8px;
+
+            input{
+                position: absolute;
+                left: -100vw;
+            }
+
+            input[type="checkbox"]:checked + label::before {
+                transform: rotate(-360deg);
+                transition: transform .3s ease-in-out;
+            }
+
+            input[type="checkbox"]:checked + label {
+                color: #f0323f;
+                transition: all .2s;
+            }
+
+            label {
+                color: #6D6D6D;
+                font-size: 14px;
+                display: inline-block;
+                cursor: pointer;
+                white-space: nowrap;
+                margin: 3px 0px;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+
+                &:hover {
+                    color: #222222;
+                }
+            }
+        }
     }
 
     div {
         max-width: 700px;
         display: flex;
-        margin-top: 40px;
 
         input {
             flex: 1;
@@ -110,6 +155,8 @@ export const Highlight = styled.div`
 
 export const Recipes = styled.div`
     margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
 
     & > div {
         display: flex;
@@ -118,13 +165,17 @@ export const Recipes = styled.div`
     }
 
     a {
+        &:nth-child(2n) {
+            margin-left: 20px;
+        }
+
         background: #fdfdfd;
         border-radius: 5px;
         padding: 24px;
         display: block;
         display: flex;
         flex: 0 49%;
-        width: 100%;
+        width: 50%;
         align-items: center;
         transition: transform 0.2s;
         margin: 10px 0;
@@ -200,7 +251,12 @@ export const Footer = styled.footer`
     display: flex;
     justify-content: center;
     margin-top: 60px;
-    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
     img {
         width: 80px;
         opacity: 0.3;

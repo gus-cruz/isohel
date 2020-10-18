@@ -1,4 +1,5 @@
 import React, { FormEvent, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FiChevronRight } from 'react-icons/fi';
 import { FaHeart, FaStopwatch } from 'react-icons/fa';
 import { GiHotMeal } from 'react-icons/gi'
@@ -56,8 +57,8 @@ const Dashboard: React.FC = () => {
                 </LogoMenu>
 
                 <Sign>
-                    <a href="#">cadastrar</a>
-                    <a href="#">entrar</a>
+                    <Link to="/signup">cadastrar</Link>
+                    <Link to="/signin">entrar</Link>
                 </Sign>
             </Header>
 
@@ -75,6 +76,22 @@ const Dashboard: React.FC = () => {
                             placeholder="Informe o nome da receita"
                         />
                         <button type="submit">Pesquisar</button>
+                    </div>
+                    <div>
+                        <ul>
+                            <li><input type="checkbox" id="cake" value="Rainbow Dash" />
+                                <label htmlFor="cake">#bolos</label>
+                            </li>
+                            <li><input type="checkbox" id="meat" value="Rainbow Dash" />
+                                <label htmlFor="meat">#carnes</label>
+                            </li>
+                            <li><input type="checkbox" id="bird" value="Rainbow Dash" />
+                                <label htmlFor="bird">#aves</label>
+                            </li>
+                            <li><input type="checkbox" id="fish" value="Rainbow Dash" />
+                                <label htmlFor="fish">#peixes</label>
+                            </li>
+                        </ul>
                     </div>
                 </Form>
 
