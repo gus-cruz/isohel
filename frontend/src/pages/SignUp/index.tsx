@@ -20,6 +20,12 @@ import logoImg from '../../assets/isohel-logo.svg';
 const SignIn: React.FC = () => {
     return (
         <Container>
+            <Background>
+                <a href="teste">
+                    <img src={logoKairos} alt="Kairos"/>
+                </ a>
+            </Background>
+
             <Content>
                 <Return>
                     <Link to="/">
@@ -32,8 +38,16 @@ const SignIn: React.FC = () => {
                 <h1>ISOHEL</h1>
 
                 <Form>
-                    <h2>Faça seu logon</h2>
+                    <h2>Faça seu cadastro</h2>
 
+                    <InputContainer>
+                        <FiMail size={20} />
+                        <Input name="text" placeholder="Nome" />
+                    </InputContainer>
+                    <InputContainer>
+                        <FiMail size={20} />
+                        <Input name="text" placeholder="Nome de usário" />
+                    </InputContainer>
                     <InputContainer>
                         <FiMail size={20} />
                         <Input name="email" placeholder="E-mail" />
@@ -50,16 +64,10 @@ const SignIn: React.FC = () => {
                     <Button type="submit">ENTRAR</Button>
 
                     <div>
-                        <Link to="/signup"><FiLogIn /> <span>criar conta</span></Link>
+                        <Link to="/signin"><FiLogIn /> <span>já tenho uma conta</span></Link>
                     </div>
                 </Form>
             </Content>
-
-            <Background>
-                <a href="teste">
-                    <img src={logoKairos} alt="Kairos"/>
-                </ a>
-            </Background>
         </Container>
     )
 }
