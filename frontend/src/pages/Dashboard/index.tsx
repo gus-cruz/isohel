@@ -57,8 +57,8 @@ const Dashboard: React.FC = () => {
                 </LogoMenu>
 
                 <Sign>
-                    <Link to="/signup">cadastrar</Link>
                     <Link to="/signin">entrar</Link>
+                    <Link to="/signup">cadastrar</Link>
                 </Sign>
             </Header>
 
@@ -127,7 +127,7 @@ const Dashboard: React.FC = () => {
 
             <Footer>
                 <a href="teste">
-                    <img src={logoKairos}/>
+                    <img src={logoKairos} alt="Kairos"/>
                 </ a>
             </ Footer>
         </ Container>
