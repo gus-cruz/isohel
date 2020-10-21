@@ -8,21 +8,25 @@ import {
     Input,
     InputContainer,
     Form,
-    Background
+    Background,
+    Return
 } from './styles';
 
 import Button from '../../components/Button';
 
+import logoKairos from '../../assets/kairos-logo.png';
 import logoImg from '../../assets/isohel-logo.svg';
 
 const SignIn: React.FC = () => {
     return (
         <Container>
             <Content>
-                <Link to="/">
-                    <FiChevronLeft />
-                    <span>voltar</span>
-                </ Link>
+                <Return>
+                    <Link to="/">
+                        <FiChevronLeft />
+                        <span>voltar</span>
+                    </ Link>
+                </Return>
 
                 <img src={logoImg} alt="ISOHEL" />
                 <h1>ISOHEL</h1>
@@ -51,7 +55,11 @@ const SignIn: React.FC = () => {
                 </Form>
             </Content>
 
-            <Background />
+            <Background>
+                <a href="teste">
+                    <img src={logoKairos}/>
+                </ a>
+            </Background>
         </Container>
     )
 }

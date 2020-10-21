@@ -12,6 +12,26 @@ export const Container = styled.div`
     background: #F0F0F0;
 `;
 
+export const Return = styled.div`
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    a {
+        color: #666360;
+        text-decoration: none;
+
+        &:hover {
+            color: #ed4a65;
+        }
+    }
+    
+
+    span {
+            position: relative;
+            bottom: 3px;
+    }
+`;
+
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
@@ -109,4 +129,14 @@ export const Background = styled.div`
   flex: 1;
   background: url(${signInBackgroundImg}) no-repeat center;
   background-size: cover;
+
+  img {
+      width: 100px;
+  }
+
+  a {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+  }
 `;
